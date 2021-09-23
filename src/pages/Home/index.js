@@ -1,5 +1,5 @@
 //import { useHistory } from 'reacr-router';
-import Button from "../../components/Button";
+import {Button} from "../../components/Button";
 import { Container, Content } from './styles';
 
 function Home(){
