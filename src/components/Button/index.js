@@ -8,6 +8,6 @@ const Button = ({children, whiteSchema = false, ...rest}) => {
   >
     {children}
   </Container>
-    );
+    )
 };
- export default Button;
+export default Button;

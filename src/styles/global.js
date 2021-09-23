@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
- div, section, header, footer{
+  *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
@@ -12,6 +12,7 @@ export default createGlobalStyle`
   --vanilla:#f1ede0;
   --black:#0c0d0d;
   --orange:#c85311;
+  --grey: #666360;
 }
 body{
   background:var(--vanilla);
