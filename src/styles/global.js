@@ -13,6 +13,7 @@ export default createGlobalStyle`
   --black:#0c0d0d;
   --orange:#c85311;
   --grey: #666360;
+  --red: #c53030;
 }
 body{
   background:var(--vanilla);

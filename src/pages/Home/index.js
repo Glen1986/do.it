@@ -15,7 +15,7 @@ function Home(){
         </h1>
         <span>Organize-se de forma facil e efetiva</span>
         <div>
-          <Button whiteSchema onClick={()=>handleNavigation("/singup")}>Cadastre-se</Button>
+          <Button whiteSchema onClick={()=>handleNavigation("/signup")}>Cadastre-se</Button>
           <Button onClick={()=>handleNavigation("/login")}>Logar</Button>
         </div>
      </Content>
