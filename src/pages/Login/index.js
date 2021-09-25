@@ -1,3 +1,4 @@
+
 import { AnimationContainer, Container, Background, Content } from './styles'
 import Button from '../../components/Button';
 import Input  from '../../components/Input';
@@ -10,7 +11,7 @@ import api from '../../services/api'
 import { ToastContainer, toast } from 'react-toastify';
 
 
-const SignUp =()=>{
+const Login =()=>{
 
 
   const schema = yup.object().shape({
@@ -55,15 +56,6 @@ const SignUp =()=>{
             <AnimationContainer>
               <form onSubmit = {handleSubmit(onSubmitFunction)}>
                 <h1>Cadastro</h1>
-                <Input
-                  register={register}
-                  icon={FiUser}
-                  label = "Nome" 
-                  placeholder= "seu nome"
-                  name="name"
-                  error = {errors.name?.message}
-                />
-
                 <Input 
                   register={register}
                   icon={FiMail}
@@ -81,17 +73,8 @@ const SignUp =()=>{
                   name="password"
                   error = {errors.password?.message}
                 />
-                <Input 
-                  register={register}
-                  icon={FiLock}
-                  type ="password"
-                  label = "confirmar Password" 
-                  placeholder= "confirmar password"
-                  name="confPassword"
-                  error = {errors.confPassword?.message}
-                />
-              <Button type="submit">Enviar</Button>
-                <p>Ja tem una conta? faza seu <Link to="/link">login</Link></p>
+               <Button type="submit">Enviar</Button>
+                <p>Ja tem una conta? faza seu <Link to="/signup">SignUp</Link></p>
               </form>
            </AnimationContainer>
           </Content>
@@ -99,4 +82,4 @@ const SignUp =()=>{
       </Container>
   )
 };
-export default SignUp;
+export default Login;
