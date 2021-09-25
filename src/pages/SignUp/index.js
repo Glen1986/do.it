@@ -1,16 +1,16 @@
 import { AnimationContainer, Container, Background, Content } from './styles'
 import Button from '../../components/Button';
 import Input  from '../../components/Input';
-import {Link} from 'react-router-dom';
+import {Link, Redirect, useHistory} from 'react-router-dom';
 import {FiUser, FiMail, FiLock } from 'react-icons/fi';
 import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from '../../services/api'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 
-const SignUp =()=>{
+const SignUp =({autenticated})=>{
 
 
   const schema = yup.object().shape({
@@ -35,17 +35,20 @@ const SignUp =()=>{
     resolver:yupResolver(schema),
   })
 
-  const history = useForm()
+  const history = useHistory()
 
   const onSubmitFunction = ({ name, email, password }) =>{
     const user = { name, email, password };
-    api.post("/users/register", user)
-      .then(() =>{ 
+    api.post("/user/register", user)
+      .then((_) =>{ 
         toast.success("sucesso ao criar a conta"); return history.push("/login") })
       .catch((err) => toast.error("error al crear cueta") )
 
   };
 
+  if (autenticated){
+    return <Redirect to="/dasboard"/>
+  }
 
 
   return(
@@ -91,7 +94,7 @@ const SignUp =()=>{
                   error = {errors.confPassword?.message}
                 />
               <Button type="submit">Enviar</Button>
-                <p>Ja tem una conta? faza seu <Link to="/link">login</Link></p>
+                <p>Ja tem una conta? faza seu <Link to="/login">login</Link></p>
               </form>
            </AnimationContainer>
           </Content>
