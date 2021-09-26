@@ -10,7 +10,7 @@ function Home({autenticated}){
   }
   
   if (autenticated){
-    return <Redirect to="/dasboard"/>
+    return <Redirect to="/dashboard"/>
   }
 
 

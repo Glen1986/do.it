@@ -13,17 +13,12 @@ import {  toast } from 'react-toastify';
 
 const Login =({autenticated, setAutenticated})=>{
   const schema = yup.object().shape({
-    name: yup.string().required("campo Obrigatorio!!!"),
     email: yup.string().email("email invalido").required("campo Obrigatorio!!!"),
     password: yup
     .string()
     .min(8, "minimo 8 caracteres")
     .required("campo Obrigatorio!!!"),
-    confPassword: yup
-    .string()
-    .oneOf([yup.ref("password")], "senhas diferentes")
-    .required("campo Obrigatorio!!!"),
-  })
+     })
   
 
   const { 
@@ -49,7 +44,7 @@ const Login =({autenticated, setAutenticated})=>{
       .catch((err) => toast.error("error al login") )
   };
   if (autenticated){
-    return <Redirect to="/dasboard"/>
+    return <Redirect to="/dashboard"/>
   }
 
 
