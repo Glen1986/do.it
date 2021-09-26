@@ -7,29 +7,29 @@ import Dashboard from '../pages/Dashborad'
 
 function Routes(){
 
-  const [autenticated, setAutenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(false)
   
   useEffect(()=>{
     const token = JSON.parse(localStorage.getItem("@Doit:token"));
     if(token){
-      return setAutenticated(true)
+      return setAuthenticated(true)
     }
-  }, [autenticated])
+  }, [authenticated])
   
   return(
   <Switch>
     <Route exact path="/">
-      <Home autenticated={autenticated}/>
+      <Home authenticated={authenticated}/>
     </Route>
-    <Route exact path="/signup">
-      <SignUp autenticated={autenticated}/>
+    <Route  path="/signup">
+      <SignUp authenticated={authenticated}/>
     </Route>
-     <Route exact path="/login">
-      <Login autenticated={autenticated}
-             setAutenticated={setAutenticated}/>
+     <Route  path="/login">
+      <Login authenticated={authenticated}
+             setAuthenticated={setAuthenticated}/>
     </Route>
-    <Route exact path= "/dashboard">
-      <Dashboard autenticated={autenticated}/>
+    <Route  path= "/dashboard">
+      <Dashboard authenticated={authenticated}/>
     </Route>
   </Switch>
   )
