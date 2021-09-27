@@ -1,5 +1,5 @@
 import { Container, InputContainer } from './styles'
-const Input =({ label, icon: Icon,  register, name, error, ...rest })=>{
+const Input =({ label, icon: Icon,  register, name, error = "", ...rest })=>{
   return(
     <Container>
       <div>

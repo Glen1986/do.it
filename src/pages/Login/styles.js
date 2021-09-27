@@ -42,7 +42,7 @@ align-items:center;
 justify-content:center;
 animation:${appearFromLeft} 1s;
 form{
-margin:160px 0;
+margin:180px 0;
   width:340px;
   text-align: center;
   h1{
